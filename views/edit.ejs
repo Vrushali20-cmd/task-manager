@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-white">
+    <div class="main w-full min-h-screen p-10">
+        <a class="text-blue-500 inline-block mb-10" href="/">← Go back</a>
+        
+        <form action="/edit" method="post" class="max-w-xl bg-zinc-900 p-8 rounded-xl border border-zinc-800">
+            <input type="hidden" name="previous" value="<%= filename %>">
+            
+            <h2 class="text-xl mb-4 font-semibold">Rename Task: <span class="text-blue-500"><%= filename %></span></h2>
+            
+            <input class="w-full rounded-lg px-4 py-3 mb-4 bg-zinc-800 border border-zinc-700 focus:outline-none focus:border-blue-500" 
+                   type="text" name="new" placeholder="Enter new filename (e.g. newname.txt)">
+            
+            <input class="w-full bg-blue-600 hover:bg-blue-500 cursor-pointer px-6 py-2 rounded-lg font-semibold transition" 
+                   type="submit" value="Update Name">
+        </form>
+    </div>
+</body>
+</html>
